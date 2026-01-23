@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX AI | Learn How to Learn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="pill">Learning Coach</p>
+      <h1>Learn how to learn, not just how to copy answers.</h1>
+      <p class="lead">Track reflections, debug smarter, and ship progress with a growth mindset.</p>
+      <div class="hero__actions">
+        <button id="cta-start" class="btn btn-primary">Start reflecting</button>
+        <button id="cta-login" class="btn">I already have an account</button>
+      </div>
+      <p class="meta">Privacy-friendly. Your notes are logged to help you improve.</p>
+    </div>
+    <div class="hero__panel" aria-hidden="true">
+      <div class="card glass">
+        <p class="eyebrow">Reflection prompt</p>
+        <p class="prompt">“What was the real root cause of your last bug?”</p>
+        <p class="subtle">Save your answer and revisit patterns weekly.</p>
+      </div>
+      <div class="card stacked">
+        <div>
+          <p class="eyebrow">Debugger habit</p>
+          <p class="prompt">Form a hypothesis → Run a small test → Compare.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Motivation</p>
+          <p class="prompt">Two small wins before noon.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid" id="auth-section">
+      <div class="card">
+        <h2>Create account</h2>
+        <form id="signup-form" class="stack">
+          <label> Name <input type="text" name="name" required /></label>
+          <label> Email <input type="email" name="email" required /></label>
+          <label> Password 
+            <div class="input-group">
+              <input type="password" name="password" minlength="8" required id="signup-password" />
+              <button type="button" class="toggle-password" data-target="signup-password">👁️</button>
+            </div>
+            <span class="field-error" id="signup-password-error"></span>
+          </label>
+          <button class="btn btn-primary" type="submit">Sign up</button>
+          <p class="hint">We log your activity to send tailored guidance.</p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Log in</h2>
+        <form id="login-form" class="stack">
+          <label> Email 
+            <input type="email" name="email" required id="login-email" />
+            <span class="field-error" id="login-email-error"></span>
+          </label>
+          <label> Password 
+            <div class="input-group">
+              <input type="password" name="password" required id="login-password" />
+              <button type="button" class="toggle-password" data-target="login-password">👁️</button>
+            </div>
+            <span class="field-error" id="login-password-error"></span>
+          </label>
+          <button class="btn" type="submit">Log in</button>
+          <p class="hint">Access your reflections and coach cards.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="dash-header">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h2 id="user-name">Your dashboard</h2>
+        </div>
+        <div class="actions">
+          <button id="logout" class="btn">Logout</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Save a reflection</h3>
+          <form id="reflection-form" class="stack">
+            <label> Prompt <input name="prompt" required placeholder="What did you learn today?" /></label>
+            <label> Answer <textarea name="answer" required rows="4" placeholder="Describe the mistake, hypothesis, test, and result."></textarea></label>
+            <button class="btn btn-primary" type="submit">Save reflection</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Recent reflections</h3>
+          <div id="reflections" class="list subtle"></div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Debugging helper</h3>
+          <ul class="list bullets" id="debug-helper">
+            <li>State your failing expectation in one sentence.</li>
+            <li>Log the smallest observable to prove/disprove your guess.</li>
+            <li>Change one thing; rerun; compare to hypothesis.</li>
+            <li>Write down what surprised you and why.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Motivation tracker</h3>
+          <form id="feedback-form" class="stack">
+            <label>What will you ship today?
+              <textarea name="message" rows="3" placeholder="Two concrete tasks you will finish." required></textarea>
+            </label>
+            <button class="btn" type="submit">Send to coach</button>
+            <p class="hint">We log this to personalize follow-ups.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>LearnX AI — Build independent problem solvers.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

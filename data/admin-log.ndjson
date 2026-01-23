@@ -1,0 +1,5 @@
+{"ts":"2026-01-20T02:57:24.629Z","event":"user_registered","admin":"you@example.com","payload":{"email":"raniachheylal24@navgrukul.org","name":"Rani"}}
+{"ts":"2026-01-20T03:05:03.784Z","event":"reflection_saved","admin":"you@example.com","payload":{"email":"raniachheylal24@navgrukul.org","prompt":"today I learn about how to use copilet. ","answerPreview":"So in this I have understand how to give prompt but in this have also some problem and have a a some mistake"}}
+{"ts":"2026-01-20T03:06:08.610Z","event":"feedback","admin":"you@example.com","payload":{"message":"I have finish the prompt enginiring","userId":1}}
+{"ts":"2026-01-23T07:14:52.705Z","event":"user_login","admin":"you@example.com","payload":{"email":"raniachheylal24@navgrukul.org"}}
+{"ts":"2026-01-23T07:16:07.555Z","event":"reflection_saved","admin":"you@example.com","payload":{"email":"raniachheylal24@navgrukul.org","prompt":"today I learn about how to use copilet. ","answerPreview":"ok"}}
