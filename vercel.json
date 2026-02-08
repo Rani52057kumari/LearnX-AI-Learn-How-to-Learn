@@ -4,10 +4,6 @@
     {
       "src": "src/server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -21,7 +17,6 @@
     }
   ],
   "env": {
-    "JWT_SECRET": "@jwt-secret",
-    "ADMIN_EMAIL": "admin@example.com"
+    "NODE_ENV": "production"
   }
 }

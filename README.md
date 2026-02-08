@@ -10,11 +10,25 @@ A lightweight learning coach that helps users practice reflection, debug smarter
 - Security: Helmet, CORS, password hashing.
 
 ## Setup
+
+### Local Development
 1. Copy env file: `cp .env.example .env` and update values.
-2. Install dependencies (current dir): `npm install .`
+2. Install dependencies: `npm install`
 3. Start dev server: `npm run dev` (defaults to http://localhost:3000).
-4. Production start: `npm start`.
-5. Lint and test: `npm test`.
+4. The app will automatically use SQLite database for local development.
+
+### Vercel Deployment
+1. Push code to GitHub
+2. Import project in Vercel
+3. Create a Vercel Postgres database in your project
+4. Add environment variables: `JWT_SECRET`, `ADMIN_EMAIL`
+5. Deploy! 🚀
+
+See [VERCEL_SETUP.md](VERCEL_SETUP.md) for detailed deployment instructions.
+
+### Production (Non-Vercel)
+1. Set `POSTGRES_URL` environment variable for PostgreSQL connection
+2. Run: `npm start`
 
 ## API (brief)
 - `POST /api/auth/register` `{ name, email, password }`
@@ -28,6 +42,7 @@ A lightweight learning coach that helps users practice reflection, debug smarter
 - User activity (registration, login, reflections, feedback) is logged to `data/admin-log.ndjson` with timestamps to let you review learner submissions.
 
 ## Notes
+- **Database**: App uses SQLite for local development and PostgreSQL for production (Vercel)
 - SQLite database stored at `data/learnx.db`; created automatically.
 - Static frontend served from `public/`.
 - Jest tests live in `tests/`.
